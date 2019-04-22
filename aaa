@@ -1,0 +1,11 @@
+public function buscar($str){
+            $mysqli = $this->criaConexao();
+            $script = "Select * from medicamento where nome like ?";
+            $sql = $mysqli->prepare($script);
+            $b = "%".$str."%";
+            $sql->bind_param('i',1);
+            $a = $sql->execute();
+            while($linha = mysqli_fetch_array($a)){
+                $linha[1];
+            }
+        }
